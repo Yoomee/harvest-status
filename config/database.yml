@@ -1,22 +1,17 @@
 development:
   adapter: postgresql
-  encoding: unicode
-  database: harvest-status-development
-  pool: 5
   host: localhost
+  username: user
+  database: harvest-status-dev
 
 test:
   adapter: postgresql
-  encoding: unicode
-  database: harvest-status-test
-  pool: 5
   host: localhost
+  username: user
+  database: harvest-status-test
 
 production:
   adapter: postgresql
-  encoding: unicode
-  database: harvest-status-production
-  pool: 5
   host: localhost
-  username: deploy
-  password:
+  username: user
+  database: harvest-status-prod
