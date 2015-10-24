@@ -5,8 +5,6 @@ gem 'pg'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'harvested'
 
-gem 'debugger'
-
 gem 'haml'
 
 gem 'bootstrap-sass', '~> 3.3.3'
@@ -15,8 +13,6 @@ gem 'font-awesome-rails'
 gem 'whenever', :require => false
 
 gem 'rails', '4.1.0'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
