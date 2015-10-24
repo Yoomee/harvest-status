@@ -3,15 +3,3 @@ development:
   host: localhost
   username: user
   database: harvest-status-dev
-
-test:
-  adapter: postgresql
-  host: localhost
-  username: user
-  database: harvest-status-test
-
-production:
-  adapter: postgresql
-  host: localhost
-  username: user
-  database: harvest-status-prod
