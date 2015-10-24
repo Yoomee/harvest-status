@@ -12,12 +12,6 @@ gem 'haml'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'font-awesome-rails'
 
-gem 'capistrano', '~> 3.2.0'
-gem 'capistrano-bundler', '~> 1.1.2'
-gem 'capistrano-rails', '~> 1.1.1'
-gem 'capistrano-rvm', github: "capistrano/rvm"
-gem "capistrano-db-tasks", require: false
-
 gem 'whenever', :require => false
 
 gem 'rails', '4.1.0'
