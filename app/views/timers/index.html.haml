@@ -1,0 +1,36 @@
+%header
+  .container
+    .row
+      .col-lg-12
+        .intro-text
+          %span.name Live Status
+          %hr.star-light/
+          %span.skills Who is doing what
+
+
+%section#portfolio
+  .container
+    .row
+      .col-lg-12.text-center
+        %h3.main-time-portion
+    .row#users
+      =render "users", :@users => @users
+
+
+-#
+  / About Section
+  %section#about.success
+    .container
+      .row
+        .col-lg-12.text-center
+          %h2 About
+          %hr.star-light/
+      .row
+        .col-lg-4.col-lg-offset-2
+          %p Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.
+        .col-lg-4
+          %p Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!
+        .col-lg-8.col-lg-offset-2.text-center
+          %a.btn.btn-lg.btn-outline{:href => "#"}
+            %i.fa.fa-download
+            Download Theme

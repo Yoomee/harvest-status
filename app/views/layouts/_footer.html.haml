@@ -1,0 +1,31 @@
+%footer.text-center
+  .footer-above
+    .container
+      .row
+        .footer-col.col-md-4
+          %h3 Harvest
+          %p
+            The Harvest account can be found
+            = succeed "." do
+              =link_to("Here", "https://yoomee.harvestapp.com/welcome")
+        .footer-col.col-md-4
+          %h3 Around the Web
+          %ul.list-inline
+            %li
+              =link_to($slack_link, :class => "btn-social btn-outline") do
+                %i.fa.fa-fw.fa-slack
+        .footer-col.col-md-4
+          %h3 Github
+          %p
+            Harvest Status can be found on
+            = succeed "." do
+              =link_to("Github", "https://github.com/freeman286/harvest-status")
+  .footer-below
+    .container
+      .row
+        .col-lg-12
+          Copyright © Yoomee
+
+.scroll-top.page-scroll.visible-xs.visble-sm
+  %a.btn.btn-primary{:href => "#page-top"}
+    %i.fa.fa-chevron-up

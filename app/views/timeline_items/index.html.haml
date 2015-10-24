@@ -1,0 +1,27 @@
+%header
+  .container
+    .row
+      .col-lg-12
+        .intro-text
+          %span.name="#{@user.first_name}'s Timeline"
+          %hr.star-light/
+          %span.skills What they have been working on
+
+
+
+%div
+  .panel-body
+    %ul.timeline
+      -@timeline_items.each do |t|
+        %li{:class => @timeline_items.index(t).odd? ? 'timeline-inverted' : ''}
+          .timeline-badge
+            %i.fa{:class => "fa-#{t.icon}"}
+          .timeline-panel
+            .timeline-heading
+              %h4.timeline-title=t.client.present? ? t.client.name : t.gitlab_porject
+              %p
+                %small.text-muted
+                  %i.fa.fa-clock-o
+                  ="#{time_ago_in_words(t.created_at)} ago"
+            .timeline-body
+              %p= t.status

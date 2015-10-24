@@ -1,0 +1,4 @@
+-@users.each_slice(4) do |users|
+  .row
+    -users.each do |user|
+      =render "user", :user => user

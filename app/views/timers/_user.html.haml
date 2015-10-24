@@ -1,0 +1,17 @@
+.col-sm-3{:id => "##{user.id}"}
+  .col-sm-12.portfolio-item
+    .portfolio-link
+      -if user.timers.active.present?
+        .caption
+          .caption-content
+            -user.timers.active.each do |t|
+              =t.status("is currently")
+      %img.img-responsive.face{:alt => "", :src => user.image}
+    .col-sm-12.activity
+      %h4.no-transform=link_to(user.first_name, user_timeline_items_path(user.id), :class => "no-dec")
+      %h5.no-transform
+        -if user.timers.active.present?
+          working on
+          =user.timers.active.last.client.name
+        -else
+          No activity
