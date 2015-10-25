@@ -7,8 +7,10 @@ gem 'harvested'
 
 gem 'haml'
 
+# For CSS stuff
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'font-awesome-rails'
+gem 'rails_12factor'
 
 gem 'whenever', :require => false
 
