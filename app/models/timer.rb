@@ -5,15 +5,15 @@ class Timer < ActiveRecord::Base
 
   scope :active, -> {
     select { |t|
-      t.updated_at + t.hours.to_f.hours > 5.minutes.ago ||
-      t.created_at + t.hours.to_f.hours > 5.minutes.ago
+      t.updated_at + t.hours.to_f.hours > 10.minutes.ago ||
+      t.created_at + t.hours.to_f.hours > 10.minutes.ago
     }
   }
 
   scope :recent, -> {
     select { |t|
-      t.updated_at > 5.minutes.ago ||
-      t.created_at > 5.minutes.ago
+      t.updated_at > 10.minutes.ago ||
+      t.created_at > 10.minutes.ago
     }
   }
 
@@ -44,12 +44,12 @@ class Timer < ActiveRecord::Base
   end
 
   def self.slack_recent
-    created = Timer.where(["created_at > ?", 5.minutes.ago])
+    created = Timer.where(["created_at > ?", 10.minutes.ago])
     created.each do |t|
       Slack.message(t.status('started'))
     end
 
-    updated = Timer.where(["updated_at > ?", 5.minutes.ago])
+    updated = Timer.where(["updated_at > ?", 10.minutes.ago])
     (updated - created).each do |t|
       Slack.message(t.status('continued'))
     end

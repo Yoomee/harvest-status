@@ -25,7 +25,7 @@ namespace :gitlab do
         end
       end
 
-      total_data.select{|x| x["created_at"] > 5.minutes.ago}.each do |d|
+      total_data.select{|x| x["created_at"] > 10.minutes.ago}.each do |d|
         TimelineItem.create(
           :user_id => $harvest.users.all.select{|u| "#{u.first_name} #{u.last_name}" == d["author_name"]},
           :notes => d["title"],

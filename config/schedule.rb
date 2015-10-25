@@ -1,4 +1,4 @@
-every 5.minutes do
+every 10.minutes do
   rake "harvest:check RAILS_ENV=production"
   rake "gitlab:check RAILS_ENV=production"
 end

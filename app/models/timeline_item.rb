@@ -3,8 +3,8 @@ class TimelineItem < ActiveRecord::Base
 
   scope :active, -> {
     select { |t|
-      t.timer.updated_at + t.timer.hours.to_f.hours > 5.minutes.ago ||
-      t.timer.created_at + t.timer.hours.to_f.hours > 5.minutes.ago
+      t.timer.updated_at + t.timer.hours.to_f.hours > 10.minutes.ago ||
+      t.timer.created_at + t.timer.hours.to_f.hours > 10.minutes.ago
     }
   }
 
