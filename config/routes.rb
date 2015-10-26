@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get '/time_portion' => 'times#give_time'
   get '/users' => 'timers#users'
 
+  get '/reports/:month/:year' => 'reports#month', :as => 'report_year_month'
+  get '/reports/:week/:year' => 'reports#week', :as => 'report_year_week'
+
   resources :users, :only => [] do
     resources :timeline_items, :only => [:index]
   end

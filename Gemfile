@@ -13,6 +13,8 @@ gem 'rails_12factor'
 
 gem 'whenever', :require => false
 
+gem 'groupdate'
+
 gem 'rails', '4.1.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

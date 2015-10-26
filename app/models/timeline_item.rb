@@ -8,6 +8,10 @@ class TimelineItem < ActiveRecord::Base
     }
   }
 
+  scope :for_week, -> (week) {where(["EXTRACT(WEEK FROM created_at) = ?", week])}
+  scope :for_month, -> (month) {where(["EXTRACT(MONTH FROM created_at) = ?", month])}
+  scope :for_year, -> (year) {where(["EXTRACT(YEAR FROM created_at) = ?", year])}
+
   include HarvestAssociations
 
   def self.create_and_update_recent
