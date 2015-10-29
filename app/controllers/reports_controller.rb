@@ -2,14 +2,14 @@ class ReportsController < ApplicationController
   def week
     @users = {}
     $harvest.users.all.each do |u|
-      @users[u.first_name.downcase.to_sym] = u.timeline_items.for_week(report_params[:week]).for_year(report_params[:year]).group_by_day(:created_at).sum("hours")
+      @users[u.first_name.downcase.to_sym] = u.timeline_items.for_week(report_params[:week]).for_year(report_params[:year]).by_day
     end
   end
 
   def month
     @users = {}
     $harvest.users.all.each do |u|
-      @users[u.first_name.downcase.to_sym] = u.timeline_items.for_month(report_params[:month]).for_year(report_params[:year]).group_by_week(:created_at).sum("hours")
+      @users[u.first_name.downcase.to_sym] = u.timeline_items.for_month(report_params[:month]).for_year(report_params[:year]).by_week
     end
   end
 
