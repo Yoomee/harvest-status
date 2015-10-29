@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150228145246) do
+ActiveRecord::Schema.define(version: 20151029113331) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,12 +23,16 @@ ActiveRecord::Schema.define(version: 20150228145246) do
     t.integer  "task_id"
     t.integer  "client_id"
     t.integer  "harvest_id"
-    t.integer  "hours"
+    t.float    "hours"
     t.string   "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "icon"
     t.string   "gitlab_project"
+    t.float    "investment_time"
+    t.float    "client_time"
+    t.float    "support_time"
+    t.float    "biz_dev_time"
   end
 
   create_table "timers", force: true do |t|
